@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf 项目主页</title>
+    <link rel="stylesheet" th:href="@{/css/base.css}"/>
+</head>
+<body>
+<h1 class="hay">点链接进入Employee列表</h1>
+<p th:text="'Time on the server is ' + ${date}"/>
+<p><a href="/list">Employee列表</a></p>
+</body>
+</html>

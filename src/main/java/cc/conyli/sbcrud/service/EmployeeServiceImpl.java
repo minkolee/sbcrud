@@ -1,11 +1,8 @@
 package cc.conyli.sbcrud.service;
 
-import cc.conyli.sbcrud.dao.EmployeeDAO;
-import cc.conyli.sbcrud.dao.EmployeeDAOJPAImpl;
 import cc.conyli.sbcrud.dao.EmployeeSpringJPA;
 import cc.conyli.sbcrud.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
