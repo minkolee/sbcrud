@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class ReactorTest {
@@ -278,10 +279,28 @@ public class ReactorTest {
 
     }
 
+    @Test
+    public void collectMonoFlux() {
+        Flux<String> flux = Flux.just("jenny", "cony", "minko", "owl", "gege");
+        Mono<List<String>> mono = flux.collectList();
+
+        StepVerifier
+                .create(mono)
+                .expectNext(Arrays.asList("jenny", "cony", "minko", "owl", "gege"))
+                .verifyComplete();
+    }
 
 
+    @Test
+    public void collectMapMonoFlux() {
+        Flux<String> flux = Flux.just("jenny", "cony", "minko", "owl", "gege");
+        Mono<Boolean> hasY = flux.all(s -> s.contains("y"));
 
+        StepVerifier.create(hasY).expectNext(false).verifyComplete();
 
+        Mono<Boolean> hasZ = flux.any(s -> s.contains("y"));
+        StepVerifier.create(hasZ).expectNext(true).verifyComplete();
+    }
 
 
 
