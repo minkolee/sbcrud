@@ -11,6 +11,7 @@ public class SbcrudApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
