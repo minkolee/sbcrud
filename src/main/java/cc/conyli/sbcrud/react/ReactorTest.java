@@ -4,7 +4,6 @@ import cc.conyli.sbcrud.entity.Employee;
 import org.junit.Test;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 import reactor.util.function.Tuple2;
@@ -13,7 +12,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ReactorTest {
 
@@ -275,21 +273,5 @@ public class ReactorTest {
                         .subscribeOn(Schedulers.parallel())
                         .log()
                 ).subscribe(s->System.out.println(s));
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
