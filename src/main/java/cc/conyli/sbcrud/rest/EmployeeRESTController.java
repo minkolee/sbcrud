@@ -19,7 +19,8 @@ public class EmployeeRESTController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> getEmployees() {
+    public List<Employee> getEmployees() throws InterruptedException {
+        Thread.sleep(4000);
         return employeeService.findAll();
     }
 
@@ -55,4 +56,6 @@ public class EmployeeRESTController {
         employeeService.deleteById(employeeId);
         return targetEmployee;
     }
+
+
 }
